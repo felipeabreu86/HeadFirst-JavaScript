@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>iROck - A rocha virtual de estimação</title>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="css/alertify/alertify.min.css" />
+		<link rel="stylesheet" href="css/alertify/themes/default.min.css" />
+		<script src="js/alertify/alertify.min.js"></script>
+		<meta charset="utf-8"/>
+	</head>
+	
+	<body onload="alertify.alert('Atenção!', 'Olá, eu sou a rocha de estimação.');">
+		<div id="divRock">
+			<img id="rockImg" src="img/rock.png" alt="iRock" onclick="touchRock();"/>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		
+		const ATENCAO = "Atenção!";
+	
+		function touchRock(){
+			alertify.prompt('Qual é o seu nome?', 'Digite o seu nome aqui...',
+				function(evt, value){
+					if (value) {
+						alertify.alert(ATENCAO, 'Prazer em conhecer você, ' + value + '.');
+						document.getElementById('rockImg').src = 'img/rock_happy.png';
+					}
+				}
+			);
+		}
+		
+	</script>
+</html>

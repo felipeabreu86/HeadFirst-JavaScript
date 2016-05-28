@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>iROck - A rocha virtual de estimação</title>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="css/alertify/alertify.min.css" />
+		<link rel="stylesheet" href="css/alertify/themes/default.min.css" />
+		<script src="js/alertify/alertify.min.js"></script>
+		<meta charset="utf-8"/>
+	</head>
+	
+	<body onload="resizeRock();greetUser();">
+		<div id="divRock">
+			<img id="rockImg" src="img/rock.png" alt="iRock" onclick="touchRock();"/>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		
+		const ATENCAO = "Atenção!";
+		const ROCKTIMEOUT = 5000; // milisegundos
+		
+		var userName;
+		
+		function alertUser(message) {
+			alertify.alert(ATENCAO, message);
+		}
+		
+		function greetUser(){
+			alertUser('Olá, eu sou a rocha de estimação.');
+		}
+	
+		function touchRock(){
+			if(userName) {
+				alertUser('Eu gosto de atenção, ' + userName + '. Obrigada.');
+				animateRock();
+			} else {
+				alertify.prompt('Qual é o seu nome?', 'Digite o seu nome aqui...', function(evt, value){
+					if (value) {
+						userName = value;
+						alertUser('Prazer em conhecer você, ' + userName + '.');
+						animateRock();
+					}
+				});
+			}
+		}
+		
+		function animateRock() {
+			document.getElementById('rockImg').src = 'img/rock_happy.png';
+			setTimeout('document.getElementById("rockImg").src = "img/rock.png";', ROCKTIMEOUT);
+		}
+		
+		function resizeRock() {
+			document.getElementById('rockImg').style.height = ((document.body.clientHeight - 100) * 0.9);
+		}
+		
+	</script>
+</html>

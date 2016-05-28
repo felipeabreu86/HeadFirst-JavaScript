@@ -1,0 +1,11 @@
+div {
+	margin-top:1px;
+	text-align:center;
+}
+.field {
+	text-align:right;
+}
+#frame {
+	width:500px;
+	margin-left:28%;
+}
