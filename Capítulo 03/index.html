@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>iROck - A rocha virtual de estimação</title>
@@ -8,7 +9,7 @@
 		<meta charset="utf-8"/>
 	</head>
 	
-	<body onload="resizeRock();greetUser();">
+	<body onload="resizeRock(); greetUser();" onresize="resizeRock();">
 		<div id="divRock">
 			<img id="rockImg" src="img/rock.png" alt="iRock" onclick="touchRock();"/>
 		</div>
@@ -50,7 +51,7 @@
 		}
 		
 		function resizeRock() {
-			document.getElementById('rockImg').style.height = ((document.body.clientHeight - 100) * 0.9);
+			document.getElementById('rockImg').style.height = ((window.innerHeight - 100) * 0.9) + 'px';
 		}
 		
 	</script>
