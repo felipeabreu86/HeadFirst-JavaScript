@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Duncan's Just-In-Time Donuts</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="css/alertify/alertify.min.css" />
+		<link rel="stylesheet" href="css/alertify/themes/default.min.css" />
+		
+		<script type="text/javascript" src="js/Capitulo02.js"></script>
+		<script src="js/alertify/alertify.min.js"></script>
+		
+		<meta charset="utf-8"/>
+	</head>
+
+	<body onload="updateOrder();">
+		<div id="frame">
+				<h1>Duncan's Just-In-Time Donuts</h1>
+			<div class="header">
+				<h3>All donuts 50 cents each, cake or glazed!</h3>
+			<div>
+
+			<form name="orderForm" action="donuts.php" method="POST">
+				<div class="field">
+					Name: <input type="text" id="name" name="name" value="" onchange="updateOrder();" />
+				<div>
+				<div class="field">
+					# of cake donuts: <input type="text" id="cakedonuts" name="cakedonuts" value="" onchange="updateOrder();" />
+				<div>
+				<div class="field">
+					# of glazed donuts: <input type="text" id="glazeddonuts" name="glazeddonuts" value="" onchange="updateOrder();" />
+				<div>
+				<div class="field">
+					Minutes 'til pickup: <input type="text" id="pickupminutes" name="pickupminutes" value="" onchange="updateOrder();" />
+				<div>				
+				<div class="field">
+					Subtotal: <input type="text" id="subtotal" name="subtotal" value="" readonly />
+				<div>
+				<div class="field">
+					Tax: <input type="text" id="tax" name="tax" value="" readonly />
+				<div>
+				<div class="field">
+					Total: <input type="text" id="total" name="total" value="" readonly />
+				<div>				
+				<div class="field">
+					<input type="button" id="buttonOrder" value="Place Order" onclick="placeOrder(this.form);" />
+				<div>
+			</form>
+		</div>
+	</body>	
+	
+</html>
